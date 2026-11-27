@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
+  "name": "context-secret-svc",
+  "post": {
+    "dir": "dist-devvit",
+    "entrypoints": {
+      "default": {
+        "entry": "index.html",
+        "height": "tall"
+      },
+      "game": {
+        "entry": "game.html"
+      }
+    }
+  },
+  "permissions": {
+    "http": {
+      "enable": false
+    },
+    "reddit": {
+      "enable": true
+    }
+  },
+  "dev": {
+    "subreddit": "ContextSecretServices"
+  },
+  "scripts": {
+    "build": "vite build --outDir dist-devvit && node build-devvit-server.mjs",
+    "dev": "vite build --outDir dist-devvit --watch"
+  },
+  "sourceIgnores": [
+    "outputs/",
+    "asset-source/",
+    ".openai/",
+    "dist/",
+    "dist-devvit/",
+    "dist-server/"
+  ],
+  "server": {
+    "entry": "index.cjs",
+    "dir": "dist-server"
+  },
+  "menu": {
+    "items": [
+      {
+        "forUserType": "moderator",
+        "location": "subreddit",
+        "description": "Create the Case 001 playtest post",
+        "label": "Create Context Secret Services case",
+        "endpoint": "/internal/create-case"
+      }
+    ]
+  }
+}

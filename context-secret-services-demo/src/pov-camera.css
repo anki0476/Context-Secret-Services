@@ -1,0 +1,12 @@
+.top-actions #pov-toggle{min-height:39px;padding:9px 14px;font-size:13px;background:#fff0cb;color:#473323;border:1px solid #bc9664;--pop-base:#b28a53;--pop-edge:#73583c}
+.top-actions #pov-toggle[aria-pressed=true]{background:#c73f32;color:#fff2d6;--pop-base:#8c3025;--pop-edge:#602b22}
+body.photo-mode #pov-toggle{display:none}
+body.first-person #world{cursor:grab;touch-action:none}
+body.first-person #world:active{cursor:grabbing}
+body.first-person #scene-shell:after{content:'';position:absolute;top:50%;left:50%;width:5px;height:5px;border:1px solid #fff4dc;border-radius:50%;box-shadow:0 0 3px #193940;pointer-events:none;opacity:.7}
+body.switching-view #scene-shell:after{opacity:0}
+body.switching-view #proximity-prompt{display:none}
+@media(max-width:1180px){body .case-id{display:none}}
+@media(max-height:560px){.top-actions #pov-toggle{min-height:33px;padding:6px 10px;font-size:12px}}
+@media(max-width:600px) and (orientation:portrait){.top-actions #pov-toggle{font-size:11px;padding:7px;min-height:35px}.topbar .game-logo{width:80px}.top-actions{gap:7px}}
+body.photo-mode #scene-shell:after{display:none}

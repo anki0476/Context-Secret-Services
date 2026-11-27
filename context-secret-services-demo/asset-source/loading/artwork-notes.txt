@@ -1,0 +1,5 @@
+Loading artwork edits used the built-in imagegen tool, one edit per supplied image.
+Prompt: Remove only the pale Gemini sparkle marks near the bottom-right, reconstruct the surrounding texture, and preserve composition, typography, figures, colors, grain and aspect ratio. Do not crop, redesign or change text.
+Sources: user-supplied e0b423b3, 25d12fde and 55ba8de4 WebP illustrations.
+Outputs: public/loading/agency.jpg, perspectives.jpg, missing-context.jpg.
+Generated PNG originals remain in the Codex generated_images folder; JPEG copies are the deployed assets.

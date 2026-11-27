@@ -1,0 +1,39 @@
+#proximity-prompt{position:absolute;z-index:23;display:flex;flex-direction:column;align-items:center;gap:9px;transform:translate(-50%,-100%);background:transparent;border:0;border-radius:0;padding:0;box-shadow:none;pointer-events:none;width:max-content;max-width:230px}
+.nearby-name,.object-name-tag{font:800 14px/1.2 'Trebuchet MS',sans-serif;color:#fff7dc;text-align:center;text-shadow:0 2px 3px #17323b,1px 0 2px #17323b,-1px 0 2px #17323b,0 -1px 2px #17323b}
+.nearby-name{display:block;max-width:220px}
+.object-name-tag{position:absolute;z-index:18;transform:translate(-50%,-100%);pointer-events:none;font-size:13px;opacity:.84;white-space:nowrap}
+.name-tag-actions{display:flex;align-items:center;justify-content:center;gap:8px;pointer-events:auto}
+#proximity-prompt button{padding:7px 10px;min-height:32px;font-size:12px;border-radius:5px;background:#244e53;color:#fff0cb}
+#proximity-prompt .nearby-cycle{padding:3px;width:25px;font-size:19px;background:#244e5388;box-shadow:none}
+#detective-tools-root{position:fixed;right:32px;top:45%;transform:translateY(-50%);z-index:62;display:none}
+body.game-active:not(.menu-active):not(.photo-mode) #detective-tools-root{display:block}
+#tools-backdrop{position:fixed;inset:0;background:#102b3e26;z-index:60}
+#detective-tools-root button{font-family:'Trebuchet MS',sans-serif}
+#detective-tools-root .disclosure-trigger{display:flex;align-items:center;gap:12px;padding:14px 20px;background:#fff0cb;color:#423024;border:1px solid #c79e61;font-size:16px;font-weight:800;box-shadow:0 5px 0 #b58e54,0 10px 24px #12353b30}
+.disclosure-badge{display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:#a83128;color:#fff4df;font:bold 14px 'Trebuchet MS',sans-serif}
+.disclosure-card{width:350px;background:#fff0cb;padding:9px;border:1px solid #c79e61;box-shadow:0 5px 0 #b58e54,0 20px 60px #12353b45;max-height:90dvh;overflow:auto}
+.disclosure-card header{display:flex;align-items:center;justify-content:space-between;padding:17px 17px 23px;gap:10px}
+.disclosure-card h2{font:800 24px Georgia,serif;color:#423024;margin:0}
+#detective-tools-root .disclosure-close{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;border:0;background:#fdf7e8;color:#654d34;padding:0;flex-shrink:0;font-size:20px}
+.disclosure-items{display:grid;gap:12px;padding:0 6px 10px}
+#detective-tools-root .disclosure-item{display:flex;align-items:center;gap:14px;text-align:left;background:#fffaf0;color:#453529;border:1px solid #ead9b8;border-radius:16px;padding:14px 12px;box-shadow:0 3px 0 #e0caa0;min-width:0}
+.disclosure-icon{display:grid;place-items:center;flex-shrink:0;width:40px;height:40px;border-radius:50%;background:#f2e4ca;color:#a63128;font-size:21px}
+.disclosure-item strong{display:block;font-size:15px;line-height:1.2;margin-bottom:5px}
+.disclosure-item small{display:block;font-size:13px;line-height:1.4;font-weight:400;color:#826d54}
+.top-actions,#case-folder{transition:opacity .28s ease}
+body.tools-open .top-actions,body.tools-open #case-folder{opacity:0;pointer-events:none}
+body.tools-open .top-actions *,body.tools-open #case-folder *{pointer-events:none!important}
+#empty-inspection{width:min(430px,90vw)}#empty-inspection h2{font-size:28px;margin:25px 0 15px}#empty-inspection .primary{width:100%;margin-top:15px}.no-clue-label{display:block;color:#a63228;font:bold 13px 'Trebuchet MS',sans-serif;letter-spacing:1px}
+#lens-status{position:absolute;top:105px;left:50%;transform:translateX(-50%);background:#173d49e8;border:1px solid #f3c879;color:#ffe8b3;border-radius:20px;padding:9px 20px;font-size:13px;z-index:22;pointer-events:none}
+.lens-region{position:absolute;z-index:19;width:80px;height:80px;transform:translate(-50%,-50%);border:3px solid #fff0a5;border-radius:50%;background:radial-gradient(circle,#ffe18c08 35%,#ffe18c55);box-shadow:0 0 22px 9px #ffd56788,inset 0 0 16px #fff5bd;pointer-events:none}
+@media(max-height:560px){#detective-tools-root{right:22px;top:50%}.disclosure-card{width:315px}.disclosure-card header{padding:10px 14px 16px}.disclosure-card h2{font-size:21px}.disclosure-items{gap:9px}.disclosure-item small{font-size:12px}#detective-tools-root .disclosure-item{padding:10px}#lens-status{top:70px}}
+@media(max-width:600px) and (orientation:portrait){#detective-tools-root{right:18px;top:41%}.disclosure-card{width:min(350px,88vw)}#proximity-prompt{max-width:240px}.nearby-name{max-width:90px;font-size:12px}#detective-tools-root .disclosure-trigger{font-size:13px;padding:10px 15px}}
+@media(prefers-reduced-motion:reduce){.top-actions,#case-folder{transition:none}}
+#case-riddle{width:min(580px,92vw);text-align:left}
+#case-riddle h2{font-size:29px;margin:23px 0}
+.riddle-verse{margin:0;padding:20px 0 20px 21px;border-left:3px solid #b7362b;font:italic 18px/1.65 Georgia,serif;color:#453326}
+.riddle-verse span{display:block}.riddle-verse span:nth-child(3),.riddle-verse span:nth-child(5),.riddle-verse span:nth-child(7){margin-top:12px}
+#case-riddle .riddle-footnote{font-size:12px;color:#806a50;margin:19px 0}
+#case-riddle .riddle-return{width:100%;background:#244c50;color:#fff0cb}
+@media(max-height:560px){#case-riddle{padding:20px 25px}#case-riddle h2{font-size:23px;margin:13px 0}.riddle-verse{font-size:15px;line-height:1.5;padding:10px 0 10px 16px}.riddle-verse span:nth-child(3),.riddle-verse span:nth-child(5),.riddle-verse span:nth-child(7){margin-top:5px}#case-riddle .riddle-footnote{margin:10px 0}}
+

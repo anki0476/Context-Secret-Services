@@ -1,0 +1,25 @@
+/* Vengeance pop-button depth/press treatment, shared by every game button. */
+body button:not(#enter){--pop-base:#102c32;--pop-edge:#537177;box-shadow:0 5px 0 var(--pop-base),0 6px 0 var(--pop-edge),0 9px 12px #0003;transition:translate 150ms ease,box-shadow 150ms ease,background 150ms ease;translate:0 0}
+body button.primary,body button.clue-marker{--pop-base:#be844c;--pop-edge:#68482e}
+body button:not(#enter):hover:not(:disabled){translate:0 2px;box-shadow:0 3px 0 var(--pop-base),0 4px 0 var(--pop-edge),0 6px 8px #0002}
+body button:not(#enter):active:not(:disabled){translate:0 5px;box-shadow:0 0 0 var(--pop-base),0 1px 0 var(--pop-edge)}
+body button:disabled{box-shadow:none;translate:none}
+body .text-btn{background:#244f54;border:1px solid #537177;border-radius:9px;padding:9px 13px}
+body .bottom-dock{background:none;border:0;box-shadow:none;backdrop-filter:none;display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:18px;bottom:38px;padding:0;pointer-events:none}
+.bottom-dock>*{pointer-events:auto}.bottom-dock #photo-return{justify-self:start}.bottom-dock #theory{justify-self:end}
+#case-folder{position:relative;z-index:3;width:205px;text-align:center;pointer-events:none}
+#case-folder .folder-root{pointer-events:auto}
+.case-folder-caption{display:flex;flex-direction:column;gap:3px;position:relative;z-index:100;color:#fff5db;text-shadow:0 1px 5px #102c32;background:#17383fe8;border-radius:8px;padding:7px 10px;margin-top:4px;pointer-events:none}
+.case-folder-caption b{font-size:13px}.case-folder-caption span{font-size:11px}
+#case-folder .folder-item{color:#372b20}
+.photo-mode #case-folder,.photo-mode #theory{visibility:hidden}
+@media(max-height:560px) and (orientation:landscape){body .bottom-dock{bottom:22px}#case-folder{width:180px}.case-folder-content .folder-root{zoom:.75}.case-folder-caption{padding:4px 8px}.case-folder-caption span{display:none}}
+@media(max-width:600px) and (orientation:portrait){body .bottom-dock{left:12px;right:12px;bottom:49px;gap:8px;grid-template-columns:1fr 1fr}#case-folder{grid-column:1/-1;grid-row:1;justify-self:center}.bottom-dock #photo-return,.bottom-dock #theory{font-size:11px;padding:9px}}
+@media(prefers-reduced-motion:reduce){body button{transition:none!important}}
+
+body button.clue-marker,body button.clue-marker:hover,body button.clue-marker:active{transform:translate(-50%,-50%);translate:none}
+
+/* Keep the case file beside reconstruction, clear of the investigation. */
+body .bottom-dock{grid-template-columns:1fr 1fr}body #case-folder{position:absolute;right:0;bottom:76px;width:205px}body .bottom-dock #theory{grid-column:2}body #case-folder .folder-root{transform:translateX(-24px)}
+@media(max-height:560px) and (orientation:landscape){body #case-folder{width:180px;bottom:61px}}
+@media(max-width:600px) and (orientation:portrait){body #case-folder{width:180px;bottom:64px;grid-column:auto;grid-row:auto}body #case-folder .folder-root{zoom:.8}}

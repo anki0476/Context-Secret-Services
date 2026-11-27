@@ -1,0 +1,59 @@
+/* Newspaper composition follows the supplied illustrated Daily News reference. */
+body:not(.game-active) .topbar,body:not(.game-active) #portrait-note{display:none}
+#intro.news-intro{inset:0;display:grid;place-items:center;padding:28px 5vw 58px;pointer-events:auto;overflow:auto;color:#735137;background:#d8cf9f;isolation:isolate}
+#news-backdrop,.news-wash{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;z-index:-2}
+#news-backdrop{filter:sepia(.45) saturate(.7) contrast(.86);transform:scale(1.04)}
+.news-wash{z-index:-1;background:linear-gradient(110deg,#e5b99555,#e6e1b341);box-shadow:inset 0 0 100px #88663e55}
+.newspaper{--ink:#735137;--paper:#f0e5b5;position:relative;width:min(1060px,100%);height:min(720px,calc(100dvh - 90px));min-height:430px;padding:18px 23px 23px;display:grid;grid-template-rows:auto 28px minmax(0,1fr) 28px;background:linear-gradient(100deg,#fff4cc22 0%,transparent 46%,#a5854310 50%,transparent 53%),var(--paper);border:2px solid #8b764c;border-radius:9px 8px 5px 8px;box-shadow:5px 6px 0 #d5c692,6px 7px 0 1px #998353,12px 20px 35px #54392240;transform:rotate(-.45deg)}
+.newspaper::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:.14;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%237b603b' opacity='.3' filter='url(%23n)' d='M0 0h170v170H0z'/%3E%3C/svg%3E")}
+.news-masthead{border-bottom:3px double var(--ink);padding-bottom:6px;position:relative}
+.masthead-kicker{text-align:center;font:700 11px/1.2 'Trebuchet MS',sans-serif;letter-spacing:3px}
+.masthead-row{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.news-title{font:700 clamp(42px,6.5vw,84px)/1.04 Georgia,'Times New Roman',serif;letter-spacing:-3px;white-space:nowrap;flex:1;text-align:center;text-shadow:1px 1px #b9a66c66}
+.paper-seal{font-size:40px;border:1px solid #9f8b58;border-radius:50%;width:52px;height:52px;display:grid;place-content:center}
+.edition{border:3px double #927849;border-radius:7px;padding:6px 13px;text-align:center;min-width:73px;transform:rotate(1.5deg);font-family:'Trebuchet MS',sans-serif}
+.edition span{display:block;font-size:11px;letter-spacing:2px;border-bottom:1px solid #9f895a;padding-bottom:3px}.edition b{display:block;font-size:25px;line-height:1.2}
+.news-sections{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:2px solid #988257;font:700 12px 'Trebuchet MS',sans-serif;white-space:nowrap}.edition-extra{font-size:10px;letter-spacing:1px}
+.news-columns{display:grid;grid-template-columns:minmax(70px,1fr) minmax(0,6fr) minmax(70px,1fr);gap:17px;padding-top:13px;padding-bottom:9px;min-height:0;overflow:hidden}
+.news-sidebar{border-right:1px solid #988257;padding-right:14px;overflow:hidden;display:flex;flex-direction:column;gap:12px}.news-sidebar.right{border-left:1px solid #988257;border-right:0;padding:0 0 0 14px}
+.news-sidebar h3{font:700 12px/1.3 Georgia,serif;letter-spacing:.3px;margin:0;text-align:center}.print-lines{height:104px;flex-shrink:0;background:repeating-linear-gradient(to bottom,#89704e 0px,#89704e 1px,transparent 1px,transparent 4px);opacity:.77}.print-lines.short{height:48px}.print-rule{height:6px;width:64%;background:var(--ink);border-radius:4px;flex-shrink:0}.side-illustration,.weather-illustration{text-align:center;font-size:38px;border-block:1px solid #a58e60;padding:4px;line-height:1.15}
+.front-story{display:flex;flex-direction:column;min-height:0;text-align:center;gap:8px}
+.breaking{display:flex;align-items:center;justify-content:center;gap:10px;color:#a34431;font:800 12px/1.1 'Trebuchet MS',sans-serif;letter-spacing:2px}.breaking span{height:2px;background:#a34431;width:30px}
+#intro .front-story h1{font:900 clamp(21px,2.65vw,36px)/1.02 Georgia,'Times New Roman',serif;letter-spacing:-.5px;margin:0;color:#735137;text-wrap:balance}
+.news-deck{font:600 clamp(12px,1.2vw,15px)/1.3 'Trebuchet MS',sans-serif;margin:0 auto;max-width:530px}
+.news-photograph{margin:2px 0 0;min-height:0;flex:1;display:flex;flex-direction:column;padding-top:5px;border-top:1px solid #a38b5b}
+#intro #photo-area{position:relative;width:100%;height:auto;flex:1;min-height:100px;overflow:hidden;border:1px solid #917952;background:#c7c6a0;cursor:pointer;box-shadow:inset 0 0 0 4px #ece0b1}
+#intro #snapshot{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:sepia(.18) saturate(.84) contrast(.97)}
+#intro #loading{color:#735137;background:#e4d8a5;font:600 14px 'Trebuchet MS',sans-serif}
+.news-photograph figcaption{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:6px 0 2px;font:italic 14px Georgia,serif}.news-photograph figcaption span{font:700 9px 'Trebuchet MS',sans-serif;letter-spacing:1px}
+.news-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:3px double #988257;font:700 10px 'Trebuchet MS',sans-serif;letter-spacing:.6px}.news-footer span:nth-child(2){font-weight:400;letter-spacing:0;font-size:11px}
+.investigate-dock{position:absolute;left:0;right:0;bottom:-24px;display:flex;justify-content:center;pointer-events:none}
+/* VengeanceUI PopButton: direct CSS port of the supplied registry component.
+   Original source retained in vendor/vengeance-pop-button.json.
+   Same shadow levels, 4px hover / 12px press travel and 150ms easing.
+   Warm palette and title case match the user's newspaper reference. */
+#enter.pop-button{pointer-events:auto;position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:216px;min-height:52px;padding:12px 36px;color:#68452c;background:#ffdc75;border:2px solid #937140;border-radius:15px;font:700 23px/1.1 'Trebuchet MS',sans-serif;box-shadow:0 12px 0 -2px #e9ad54,0 12px 0 0 #937140,0 22px 0 0 #bd995b44;transition:all 150ms cubic-bezier(0,0,.58,1);filter:none;cursor:pointer}
+#enter.pop-button:hover:not(:disabled){background:#ffe48e;transform:translateY(4px);box-shadow:0 8px 0 -2px #e9ad54,0 8px 0 0 #937140,0 16px 0 0 #bd995b44}
+#enter.pop-button:active:not(:disabled){background:#ffe48e;transform:translateY(12px);box-shadow:0 0 0 -2px #e9ad54,0 0 0 0 #937140,0 0 0 0 #bd995b44}
+#enter.pop-button:focus-visible{outline:3px solid #86502f;outline-offset:6px}#enter.pop-button:disabled{opacity:.65;cursor:wait}
+.game-active #intro.news-intro{display:none}
+@media(min-width:1500px){.newspaper{width:1160px}.news-title{font-size:88px}}
+@media(max-width:700px){#intro.news-intro{padding:18px 20px 56px}.newspaper{height:calc(100dvh - 78px);padding:14px 14px 23px;min-height:450px}.news-title{font-size:clamp(34px,8vw,58px);letter-spacing:-2px}.masthead-kicker{font-size:9px;letter-spacing:1.7px}.paper-seal{display:none}.edition{min-width:53px;padding:4px 8px}.edition b{font-size:20px}.news-sections{justify-content:center;font-size:10px;letter-spacing:-.1px}.edition-extra{display:none}.news-columns{grid-template-columns:1fr;gap:0;padding-top:14px}.news-sidebar{display:none}.front-story{gap:10px}#intro .front-story h1{font-size:clamp(25px,5.7vw,36px)}.news-deck{font-size:14px;max-width:90%}.news-photograph figcaption{font-size:12px}.news-photograph figcaption span{font-size:8px;max-width:120px;text-align:left}.footer-time{display:none}.news-footer{font-size:8px;gap:8px}.news-footer span:nth-child(2){font-size:10px;max-width:160px;text-align:right}}
+@media(max-height:520px) and (orientation:landscape){#intro.news-intro{padding:9px 36px 39px}.newspaper{height:calc(100dvh - 48px);min-height:280px;width:min(1000px,100%);padding:8px 17px 15px;grid-template-rows:auto 20px minmax(0,1fr) 19px}.masthead-kicker{display:none}.news-title{font-size:42px;letter-spacing:-1.5px}.paper-seal{width:33px;height:33px;font-size:25px}.edition{padding:2px 9px;min-width:60px}.edition span{font-size:8px;padding-bottom:0}.edition b{font-size:16px}.news-sections{font-size:9px}.edition-extra{font-size:8px}.news-columns{padding-top:7px;padding-bottom:4px;gap:12px;grid-template-columns:70px minmax(0,1fr) 70px}.news-sidebar{display:flex;gap:8px;padding-right:10px}.news-sidebar.right{padding-left:10px}.news-sidebar h3{font-size:9px}.print-lines{height:58px}.side-illustration,.weather-illustration{font-size:25px}.front-story{gap:4px}.breaking{font-size:9px;letter-spacing:1.4px}#intro .front-story h1{font-size:22px;line-height:1;letter-spacing:0}.front-story h1 br{display:none}.news-deck{display:none}.news-photograph{padding-top:3px;margin:0}#intro #photo-area{min-height:75px}.news-photograph figcaption{padding:3px 0;font-size:11px}.news-photograph figcaption span{font-size:8px}.news-footer{font-size:8px}.news-footer span:nth-child(2){font-size:9px}.investigate-dock{bottom:-20px}#enter.pop-button{min-height:39px;min-width:180px;font-size:19px;padding:8px 26px;border-radius:12px}.newspaper .footer-time{display:block}}
+@media(prefers-reduced-motion:reduce){#enter.pop-button{transition:none}}
+#intro #loading{position:absolute;inset:auto auto 12px 12px;z-index:4;padding:8px 12px;border:1px solid #a38b5b;border-radius:20px;font:600 12px 'Trebuchet MS',sans-serif;box-shadow:0 2px 8px #49351d22;pointer-events:none}
+#intro #loading[hidden],.photo-mosaic[hidden],.photo-retry[hidden]{display:none}
+.photo-mosaic{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+#photo-area[data-photo-state=loading]::after{content:'';position:absolute;inset:0;z-index:3;background:linear-gradient(110deg,transparent 30%,#fff5ce88 50%,transparent 70%);background-size:250% 100%;animation:photo-sweep 1.8s linear infinite;pointer-events:none}
+#intro #photo-area[data-photo-state=loading] #snapshot{opacity:.3;filter:blur(4px)}
+#intro #photo-area[data-photo-state=error] #snapshot{opacity:.28;filter:blur(2px) saturate(.5)}
+.photo-retry{position:absolute;z-index:5;top:40%;left:50%;transform:translateX(-50%);background:#ffdc75;color:#68452c;border:1px solid #937140;border-radius:20px;padding:10px 18px;cursor:pointer}
+@keyframes photo-sweep{from{background-position:150% 0}to{background-position:-100% 0}}
+@media(prefers-reduced-motion:reduce){#photo-area[data-photo-state=loading]::after{animation:none}}
+/* Animated placeholder is present while scene assets are still developing. */
+#intro #photo-area[data-photo-state=loading]{background-color:#d3c28b;background-image:linear-gradient(90deg,#97774526 1px,transparent 1px),linear-gradient(#97774526 1px,transparent 1px);background-size:24px 24px}
+#intro #photo-area[data-photo-state=loading]::after{background:linear-gradient(180deg,transparent 0%,#fff4c000 35%,#fff4c0cc 49%,#b1884b88 50%,transparent 65%);background-size:100% 250%;animation:develop-scan 1.6s linear infinite}
+#intro #photo-area[data-photo-state=loading] #loading::before{content:'';display:inline-block;width:12px;height:12px;margin-right:8px;border:2px solid #73513744;border-top-color:#735137;border-radius:50%;vertical-align:-2px;animation:develop-spin .8s linear infinite}
+@keyframes develop-scan{from{background-position:0 150%}to{background-position:0 -100%}}
+@keyframes develop-spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){#intro #photo-area[data-photo-state=loading]::after,#intro #photo-area[data-photo-state=loading] #loading::before{animation:none}}

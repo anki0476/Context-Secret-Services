@@ -1,0 +1,5 @@
+#music-toggle{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:1050;min-height:34px;padding:7px 13px;border-radius:8px;background:#fff0cb;color:#453126;border:1px solid #b18b57;font:bold 12px 'Trebuchet MS',sans-serif}
+.control-hint{display:none}
+body #music-toggle:active:not(:disabled){transform:translateX(-50%)}
+@media(max-height:560px){#music-toggle{bottom:12px;min-height:30px;font-size:10px;padding:5px 9px}}
+@media(orientation:portrait){#music-toggle{bottom:27px}}

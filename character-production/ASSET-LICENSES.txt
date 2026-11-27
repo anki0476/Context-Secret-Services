@@ -1,0 +1,10 @@
+Human base mesh, default skeleton, weights, eye mesh and shape targets:
+MakeHuman Community, CC0 1.0 Universal.
+https://github.com/makehumancommunity/makehuman
+https://github.com/makehumancommunity/makehuman/blob/master/LICENSE.md
+Full asset license retained in source/LICENSE.ASSETS.md.
+
+Only graphical asset data is used; the character build script does not copy MakeHuman application code.
+Garments, satchel, swept hair details, materials and walk animation are authored for Context Secret Services in build_detective.py.
+
+Blender is a separate GPL-licensed authoring tool obtained from its official download infrastructure. It is not bundled with or served by the game.

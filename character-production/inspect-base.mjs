@@ -1,0 +1,6 @@
+import fs from 'node:fs';
+const root=new URL('./source/',import.meta.url);let v=[],faces=[],group='';
+for(const l of fs.readFileSync(new URL('base.obj',root),'utf8').split(/\r?\n/)){if(l.startsWith('v '))v.push(l.split(/\s+/).slice(1).map(Number));if(l.startsWith('g '))group=l.slice(2);if(l.startsWith('f ')&&group==='body')faces.push(l.split(/\s+/).slice(1).map(x=>Number(x.split('/')[0])-1));}
+for(const [file,w] of [['asian-male-young.target',.5],['caucasian-male-young.target',.5],['universal-male-young-averagemuscle-averageweight.target',1]])for(const l of fs.readFileSync(new URL(file,root),'utf8').split(/\r?\n/)){if(!/^\d/.test(l))continue;const [i,...d]=l.split(/\s+/).map(Number);d.forEach((x,j)=>v[i][j]+=x*w);}
+let used=[...new Set(faces.flat())];const min=[0,1,2].map(a=>Math.min(...used.map(i=>v[i][a]))),max=[0,1,2].map(a=>Math.max(...used.map(i=>v[i][a])));console.log({vertices:v.length,faces:faces.length,min,max});
+const rig=JSON.parse(fs.readFileSync(new URL('default.mhskel',root)));for(const name of ['head','neck01','spine01','spine05','upperarm01.L','upperarm02.L','lowerarm01.L','lowerarm02.L','wrist.L','upperleg01.L','lowerleg01.L','foot.L','eye.L']){let b=rig.bones[name];if(!b)continue;const center=k=>rig.joints[k].reduce((a,i)=>a.map((x,j)=>x+v[i][j]/rig.joints[k].length),[0,0,0]);console.log(name,center(b.head),center(b.tail));}

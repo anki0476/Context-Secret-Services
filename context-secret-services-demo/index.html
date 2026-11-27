@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="theme-color" content="#101f28"><meta name="description" content="Step inside a misleading photograph. A playable 3D detective concept for Context Secret Services."><title>Context Secret Services — The Comeback Cake</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231b343b'/%3E%3Ccircle cx='27' cy='26' r='14' stroke='%23f3bc78' stroke-width='6' fill='none'/%3E%3Cpath d='M38 37L51 50' stroke='%23f3bc78' stroke-width='7'/%3E%3C/svg%3E"></head>
+<body>
+<div id="app">
+  <div id="scene-shell"><canvas id="world" aria-label="Interactive three-dimensional investigation scene"></canvas><div id="markers"></div></div>
+  <header class="topbar"><a href="./" class="brand" aria-label="Context Secret Services home"><img class="game-logo game-logo-transparent" src="/branding/logo-transparent.png" alt="Context Secret Services" width="1680" height="945"></a><div class="case-id"><span class="live-dot"></span> CASE 001 <span class="slash">/</span> THE COMEBACK CAKE</div><div class="top-actions"><button id="pov-toggle" class="secondary" aria-pressed="false" title="Switch between overhead and first-person view (V)">Cat POV</button><button id="photo-return" class="secondary">View photograph</button><button id="help" class="icon-btn" aria-label="Replay Chief Marlowe’s briefing">?</button><button id="pause" class="icon-btn" aria-label="Pause game"><span class="pause-bars" aria-hidden="true"></span></button></div></header>
+  <section id="intro" class="intro news-intro" aria-label="Daily News front page">
+    <img id="news-backdrop" alt="" aria-hidden="true">
+    <div class="news-wash" aria-hidden="true"></div>
+    <article class="newspaper">
+      <header class="news-masthead"><div class="masthead-kicker">THE QUAY HOUSE CHRONICLE</div><div class="masthead-row"><span class="paper-seal" aria-hidden="true">✦</span><div class="news-title">DAILY NEWS</div><div class="edition"><span>CASE</span><b>001</b></div></div></header>
+      <div class="news-sections"><span>City life · Editorial · Politics · Business · Culture · Lifestyle</span><span class="edition-extra">EVENING EDITION</span></div>
+      <div class="news-columns">
+        <aside class="news-sidebar" aria-hidden="true"><h3>IN THE CITY</h3><div class="print-lines"></div><div class="side-illustration">✦</div><h3>THE TALK<br>OF THE TOWN</h3><div class="print-lines short"></div><div class="print-rule"></div><div class="print-lines"></div></aside>
+        <div class="front-story">
+          <div class="breaking"><span></span> BREAKING NEWS <span></span></div>
+          <h1>CEO RETURNS.<br> STAFF SAY “GOOD RIDDANCE”.</h1>
+          <p class="news-deck">Rehired after just one week. An office celebration serves up a very different message.</p>
+          <figure id="photo-frame" class="news-photograph"><div id="photo-area"><img id="snapshot" alt="A cropped photograph of the returning CEO beside an office cake inscribed Good Riddance"><div id="loading" role="status">Developing the photograph…</div></div><figcaption><span>QUAY HOUSE · THE IMAGE EVERYONE SAW</span><em>“Some welcome-back party.”</em></figcaption></figure>
+        </div>
+        <aside class="news-sidebar right" aria-hidden="true"><h3>BUSINESS<br>AS USUAL?</h3><div class="print-lines"></div><div class="print-rule"></div><div class="print-lines short"></div><div class="weather-illustration">☀</div><h3>A FRESH<br>OUTLOOK</h3><div class="print-lines"></div></aside>
+      </div>
+      <footer class="news-footer"><span class="game-logo game-logo-light" role="img" aria-label="Context Secret Services"></span><span>A fictional case · Not a real news report</span><span class="footer-time">3–5 MINUTES</span></footer>
+      <div class="investigate-dock"><button id="enter" class="pop-button" disabled>Investigate</button></div>
+    </article>
+  </section>
+  <section id="game-ui" hidden>
+    <p id="objective" hidden>Explore objects around the party.</p>
+    
+    <div class="bottom-dock"><div id="case-folder"></div><button id="theory" class="primary" hidden disabled>Connect the clues</button></div>
+    <div class="movement-control"><div id="movement-pad" role="group" aria-label="Movement joystick: drag to walk, or use WASD and arrow keys" title="Drag to walk · WASD / arrow keys"><span class="joystick-cross" aria-hidden="true"></span><span id="movement-thumb" aria-hidden="true"></span></div></div>
+    
+  </section>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <dialog id="inspect-dialog" class="inspect-dialog"><button class="close icon-btn" aria-label="Close inspection">×</button><div class="evidence-art" id="evidence-art"></div><div class="inspect-content"><div class="eyebrow" id="clue-category"></div><h2 id="clue-title"></h2><p id="clue-description"></p><div id="clue-quote" class="clue-quote"></div><p id="clue-thought" class="clue-thought"></p><button id="collect" class="primary">Add to case file</button></div></dialog>
+  <dialog id="theory-dialog" class="theory-dialog"><button class="close icon-btn" aria-label="Close reconstruction">×</button><div class="eyebrow">THE PICTURE ISN’T THE WHOLE STORY</div><h2>What actually happened?</h2><p>Make an explanation that accounts for the evidence.</p><div id="theory-options"></div><p id="theory-feedback" role="status"></p><button id="test-theory" class="primary" disabled>Test this explanation</button></dialog>
+  <dialog id="result-dialog" class="result-dialog"><button class="close icon-btn" aria-label="Close report">×</button><div class="eyebrow">CASE CLOSED · CONTEXT RESTORED</div><h2>A comeback.<br><em>A leftover cake.</em></h2><p>The farewell cake stayed in cold storage. When the CEO returned a week later, the team reused it. The new “Welcome back” plaque never made it out of the delivery box.</p><div class="timeline"><div><b>01</b><span>Farewell cake ordered</span></div><div><b>02</b><span>Return announced</span></div><div><b>03</b><span>Old cake reused</span></div></div><div class="meme-report"><span>YOUR CONTEXT REPORT</span><label for="caption">Give the photograph a better caption</label><textarea id="caption" rows="2" maxlength="180">When your career has a faster turnaround than the office catering.</textarea><div class="caption-options"><button data-caption="When your career has a faster turnaround than the office catering.">The comeback</button><button data-caption="They reversed the firing. Nobody told the frosting.">The frosting</button><button data-caption="One CEO. Two parties. Absolutely no cake budget.">The budget</button></div></div><div class="result-actions"><button id="copy-report" class="primary">Copy my report</button><button id="back-scene" class="secondary">Back to the scene</button></div><small>This demo copies a report. It doesn’t post to Reddit.</small></dialog>
+  <dialog id="help-dialog" class="help-dialog"><button class="close icon-btn" aria-label="Close help">×</button><div class="eyebrow">FIELD NOTES</div><h2>Look beyond the crop.</h2><p>Enter the photograph to reveal the room around it. Approach objects and inspect them. Some contain evidence; others do not.</p><p>Drag empty space to orbit. Pinch or scroll to zoom. You can revisit the original photograph at any time.</p><p>Move with the joystick, WASD, or arrow keys. Movement follows your camera view. Press E to inspect a nearby object. Press T for detective tools. Escape closes an inspection.</p><label class="motion-setting"><input type="checkbox" id="reduce-motion"> Reduce camera animation</label><button class="primary close-help">Got it</button></dialog>
+  <div id="portrait-note">This case has a wider view in landscape. You can keep playing here.</div>
+  <div id="fatal" hidden><h2>The 3D scene couldn’t start.</h2><p>This demo needs WebGL. Try a browser with hardware acceleration enabled.</p><button onclick="location.reload()">Try again</button></div>
+</div><script type="module" src="/src/main.js"></script>
+</body></html>
+

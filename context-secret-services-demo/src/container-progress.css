@@ -1,0 +1,7 @@
+.crate-progress{position:relative;width:130px;pointer-events:none;background:transparent;border:0;padding:0;box-shadow:none}
+.crate-progress-content{width:100%;padding:0;background:transparent}
+.crate-progress-label{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.crate-progress-label span{display:block;transform-origin:bottom;transform-style:preserve-3d}.crate-progress-label b{color:#a63328;white-space:nowrap}
+.crate-progress-track{height:10px;border-radius:8px;overflow:hidden;background:#173c4960;border:1px solid #fff0cbcc;box-shadow:0 2px 4px #173c4930}
+.crate-progress-fill{height:100%;background:#bc3c2d;border-radius:8px;position:relative;overflow:hidden}
+.crate-progress-fill i{display:block;position:absolute;inset:0;background:linear-gradient(90deg,transparent,#ffdc9788,transparent)}

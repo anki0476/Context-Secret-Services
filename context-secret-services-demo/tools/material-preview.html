@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Evidence materials · local review</title>
+<style>body{padding:32px;overflow:auto!important;color:#fff1d2!important}nav{display:flex;gap:12px;flex-wrap:wrap}nav button{padding:12px 18px;border-radius:8px}label{display:block;margin:24px 0}</style></head>
+<body><h1>Evidence material review</h1><p>Local component preview. These are the same evidence surfaces used inside the game.</p><nav></nav><label><input id="reduced" type="checkbox"> Reduced motion</label>
+<dialog id="inspect-dialog" class="inspect-dialog"><button class="close icon-btn" aria-label="Close inspection">×</button><div id="evidence-art" class="evidence-art"></div><div class="inspect-content"><div id="category" class="eyebrow"></div><h2></h2><p id="description"></p><div class="clue-quote"></div></div></dialog>
+<script type="module">
+import '../src/style.css';
+import {clues} from '../src/case.js';
+import {mountInspectionMaterials} from '../src/inspection-materials.jsx';
+const dialog=document.querySelector('dialog');
+const viewer=mountInspectionMaterials(document.querySelector('#evidence-art'),dialog,()=>document.querySelector('#reduced').checked);
+document.querySelector('.close').onclick=()=>dialog.close();
+for(const clue of clues){const button=document.createElement('button');button.textContent=clue.short;button.onclick=()=>{document.querySelector('h2').textContent=clue.name;document.querySelector('#description').textContent=clue.description;document.querySelector('#category').textContent=clue.category;document.querySelector('.clue-quote').textContent=clue.quote;dialog.showModal();viewer.show(clue);};document.querySelector('nav').append(button);}
+</script></body></html>

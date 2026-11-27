@@ -1,0 +1,28 @@
+{
+  "name": "context-secret-svc",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "@devvit/client": "^0.15.6",
+    "@devvit/reddit": "^0.15.6",
+    "@devvit/server": "^0.15.6",
+    "@fontsource-variable/dm-sans": "^5.3.0",
+    "@fontsource-variable/manrope": "^5.3.0",
+    "motion": "^12.0.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-icons": "^5.5.0",
+    "three": "0.181.2"
+  },
+  "devDependencies": {
+    "devvit": "0.15.6",
+    "vite": "6.4.6"
+  },
+  "license": "BSD-3-Clause"
+}

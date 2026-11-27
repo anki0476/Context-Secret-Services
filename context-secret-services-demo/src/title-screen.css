@@ -1,0 +1,17 @@
+#title-screen{position:fixed;inset:0;z-index:900;display:grid;place-items:center;color:#fff4df;overflow:auto;background:linear-gradient(180deg,#123b4b99,#142b3fe8);backdrop-filter:blur(5px);transition:opacity .6s ease}
+.title-atmosphere{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 20%,#f9d89722,transparent 65%)}
+.title-content{position:relative;display:flex;flex-direction:column;align-items:center;width:min(600px,94vw);padding:22px;text-align:center}
+.title-logo-slot{width:clamp(260px,34vw,430px);aspect-ratio:1672/941;display:flex;align-items:center;justify-content:center}
+.title-logo-slot .game-logo{width:100%;height:100%;background:none;object-fit:contain;filter:drop-shadow(1px 2px 0 #a99678) drop-shadow(2px 4px 0 #63564c) drop-shadow(0 12px 18px #0005)}
+.title-case{font-size:10px;letter-spacing:3px;color:#e7ccb0;margin:4px 0 24px}.title-case span{color:#ed6550;margin:0 9px}
+.title-content nav{display:flex;flex-direction:column;gap:12px;width:min(360px,100%)}
+body .title-content button{min-height:43px;padding:11px 18px;background:#153845d9;color:#fff3dc;border:1px solid #64807d;border-radius:6px;font-size:15px;letter-spacing:.4px;font-weight:700}
+body .title-content button:first-child{background:#f4c77d;color:#3d2e20;--pop-base:#ae7949;--pop-edge:#6c513b;border-color:#ebd4a5}
+.title-motto{font:italic 14px Georgia,serif;color:#c4d3d1;margin:28px 0 0}
+.menu-active #game-ui,.menu-active .topbar{visibility:hidden}.menu-active #toast{display:none}
+.title-logo-placeholder{display:block;flex-shrink:0}
+#title-screen.leaving{opacity:0;pointer-events:none}
+.menu-dialog{width:min(430px,90vw);padding:30px;background:#fff0cb;color:#3d3026;border:2px solid #b68a53;border-radius:8px;box-shadow:5px 7px 0 #936b40}
+.menu-dialog::backdrop{background:#081b29ba}.menu-dialog h2{font-family:Georgia,serif}.menu-dialog p{font-size:14px;line-height:1.6}.menu-dialog label{display:flex;gap:12px;align-items:center;margin:24px 0}.menu-dialog input[type=range]{width:140px;accent-color:#b9382b}.menu-dialog .eyebrow{color:#ae3528}
+@media(max-height:560px) and (orientation:landscape){.title-content{padding:10px}.title-logo-slot{width:225px}.title-case{margin:0 0 12px;font-size:9px}.title-content nav{gap:7px;width:320px}body .title-content button{min-height:33px;padding:6px 12px;font-size:12px}.title-motto{margin:14px 0 0;font-size:12px}}
+@media(prefers-reduced-motion:reduce){#title-screen{transition:none}}
